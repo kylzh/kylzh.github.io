@@ -9,6 +9,12 @@ h1 {
     color: #21e3c4; /* Text color */
 }
 
+h2 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 35px; /* Font size */
+    color:#ff86ba /* Text color */
+}
+
 h3 {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 30px; /* Font size */
@@ -29,7 +35,7 @@ a {
 
 /* Styling links on hover */
 a:hover {
-    color: #ffbce4; /* Change color on hover */
+    color: hsl(51, 100%, 60%); /* Change color on hover */
     text-decoration: none;
 }
 
@@ -43,6 +49,7 @@ a:visited {
 .icon-link img {
     width: 30px; /* Set the width of the icons */
     height: auto; /* Maintain aspect ratio */
+    padding-right: 10%;
 }
 
 .buttons {
@@ -58,9 +65,13 @@ a:visited {
     font-weight: bold;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 24px; /* Font size */
-    background-color:#ff86ba; /* Button background color */
     color: #0E035E; /* Button text color */
+    background-color:#ff86ba; /* Button background color */
     transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.button a:visited {
+    color: #0E035E; /* Button text color */
 }
 
 .button:hover {
@@ -107,4 +118,44 @@ li {
     font-size: 20px; /* Font size */
     text-decoration: underline;
     text-decoration-color: #21e3c4;
+}
+
+.container-for-projects {
+    overflow: hidden; /* Clear the float */
+}
+  
+.column {
+    float: left;
+    width: 50%;
+}
+  
+.item {
+    font-size: 18px;
+    padding-top: 20%;
+    padding-left: 15%;
+}
+
+.insta-img img {
+    width: 28%; /* Set the width of the icons */
+    height: auto; /* Maintain aspect ratio */
+    padding: 0 2%;
+}
+
+.infographic-img {
+    width: 30%; /* Set the width of the icons */
+    height: auto; /* Maintain aspect ratio */
+    padding: 0 2%;
+}
+
+.infographic-container {
+    overflow: hidden; /* Clear floats */
+  }
+  
+  .image {
+    width: 75%;
+    padding-bottom: 7%;
+  }
+
+.video-player {
+    width: 50%;
 }
