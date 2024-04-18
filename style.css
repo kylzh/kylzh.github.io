@@ -18,7 +18,7 @@ h2 {
 h3 {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 30px; /* Font size */
-    color:#21e3c4 /* Text color */
+    color:#21e3c4; /* Text color */
 }
 
 p {
@@ -30,7 +30,7 @@ p {
 
 a {
     text-decoration: none;
-    color: #ff86ba
+    color: #ff86ba;
 }
 
 /* Styling links on hover */
@@ -42,7 +42,7 @@ a:hover {
 /* Styling visited links */
 a:visited {
     text-decoration: none;
-    color: #ff86ba
+    color: #ff86ba;
 }
 
 /* Adjust the size of the icons */
