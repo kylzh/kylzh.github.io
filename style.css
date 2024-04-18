@@ -40,11 +40,6 @@ a:hover {
     text-decoration: none;
 }
 
-/* Styling visited links */
-a:visited {
-    text-decoration: none;
-    color: #ff86ba;
-}
 
 /* Adjust the size of the icons */
 .icon-link img {
@@ -75,7 +70,7 @@ a:visited {
     color: #0E035E; /* Button text color */
 }
 
-.button:hover {
+.button a:hover {
     background-color: #21e3c4; /* Change background color on hover */
 }
 
