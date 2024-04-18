@@ -152,11 +152,15 @@ li {
     overflow: hidden; /* Clear floats */
   }
   
-  .image {
+.image {
     width: 75%;
     padding-bottom: 7%;
   }
 
 .video-player {
     width: 50%;
+}
+
+.project-example {
+    width: 65%;
 }
