@@ -1,6 +1,6 @@
 body {
     background-color: #0E035E; /* Dark blue background color */
-    margin: 10% 15%;
+    margin: 10% 17%;
 }
 
 
@@ -36,6 +36,15 @@ a {
 
 /* Styling links on hover */
 a:hover {
+    color: hsl(51, 100%, 60%); /* Change color on hover */
+    text-decoration: none;
+}
+
+.project-links {
+    color:#21e3c4
+}
+
+.project-links a:hover {
     color: hsl(51, 100%, 60%); /* Change color on hover */
     text-decoration: none;
 }
@@ -127,8 +136,9 @@ li {
   
 .item {
     font-size: 18px;
-    padding-top: 20%;
-    padding-left: 15%;
+    padding-top: 12%;
+    padding-left: 7%;
+    padding-right: 8%
 }
 
 .insta-img img {
@@ -157,5 +167,5 @@ li {
 }
 
 .project-example {
-    width: 70%;
+    width: 80%;
 }
