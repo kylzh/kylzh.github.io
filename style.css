@@ -1,0 +1,110 @@
+body {
+    background-color: #0E035E; /* Dark blue background color */
+    margin: 10% 10%}
+
+
+h1 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 40px; /* Font size */
+    color: #21e3c4; /* Text color */
+}
+
+h3 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 30px; /* Font size */
+    color:#21e3c4 /* Text color */
+}
+
+p {
+    background-color: #0E035E; /* Dark blue background color */
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 24px; /* Font size */
+    color: #21e3c4; /* Text color */
+}
+
+a {
+    text-decoration: none;
+    color: #ff86ba
+}
+
+/* Styling links on hover */
+a:hover {
+    color: #ffbce4; /* Change color on hover */
+    text-decoration: none;
+}
+
+/* Styling visited links */
+a:visited {
+    text-decoration: none;
+    color: #ff86ba
+}
+
+/* Adjust the size of the icons */
+.icon-link img {
+    width: 30px; /* Set the width of the icons */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 2% 5%;
+    margin: 2% 5%;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 24px; /* Font size */
+    background-color:#ff86ba; /* Button background color */
+    color: #0E035E; /* Button text color */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.button:hover {
+    background-color: #21e3c4; /* Change background color on hover */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    border-bottom: 3px solid #21e3c4;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 20px; /* Font size */
+    color: #21e3c4; /* Text color */
+    padding: 2%;
+    text-align: left;
+}
+
+td {
+    border-bottom: 0.5px solid #21e3c4;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 20px; /* Font size */
+    color: #ff86ba; /* Text color */
+    padding: 2%;
+    text-align: left;
+}
+
+nav {
+    padding-top: 0;
+    padding-bottom: 5%;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+li {
+    display: inline;
+    margin: 0 10%;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: bold;
+    font-size: 20px; /* Font size */
+    text-decoration: underline;
+    text-decoration-color: #21e3c4;
+}
