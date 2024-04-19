@@ -64,15 +64,15 @@ a:hover {
 
 .button {
     display: inline-block;
-    padding: 2% 5%;
-    margin: 2% 2%;
+    padding: 1% 1%;
+    margin: 1% 1%;
     text-decoration: none;
     font-weight: bold;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 24px; /* Font size */
     color: #0E035E; /* Button text color */
     background-color:#ff86ba; /* Button background color */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    transition: background-color 0.4s ease; /* Smooth transition for hover effect */
 }
 
 .button a:visited {
