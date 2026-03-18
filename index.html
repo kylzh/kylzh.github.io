@@ -1,113 +1,1251 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Kayla Zhu - Data Journalist</title>
-        <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <h1>👋 Hi there, I'm <span style="color: #ff86ba">Kayla</span>.</h1>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kayla Zhu - Data Storyteller</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:         #F7F4F1;
+    --cream-dark:    #e8e4e0;
+    --violet:        #222244;
+    --periwinkle:    #BFC0FF;
+    --blue:          #76AFFF;
+    --blue-pale:     #deeaff;
+    --periwinkle-pale: #eceeff;
+    --ink:           #362038;
+    --ink-light:     #5a4a5e;
+    --ink-muted:     #9a8fa0;
+    --white:         #ffffff;
+  }
 
-        <p><br>
-            <br>
-            
-            📝 I'm a data journalist and writer with a specialization in 
-            data analysis, data visualization, and graphic design.
-            <br>
-            <br>
-    
-            📈 Currently, I work as a <span style="color: #ff86ba">Data-Driven Writer</span> for <a href="https://www.visualcapitalist.com/">Visual Capitalist</a>, where I 
-            collaborate with a team of designers and editors to create original, informative data visualizations and infographics, and write
-            data-driven articles to accompany them.
-            <br>
-            <br>
-            💼 Previously, I've worked as a data reporter with the <a href="https://theijf.org/author/kayla-zhu">Investigative Journalism Foundation</a>, 
-            a data journalist with the <a href="https://localnewsdatahub.ca/donating-to-the-cause/">Local News Data Hub</a>,
-            an intern at <a href="https://www.cbc.ca/news/investigates">CBC's Investigative Unit</a>, a reporter at <a href="https://j-source.ca/author/kaylazhu/">J-Source</a>, and a 
-            communications assistant at the <a href="https://brookfieldinstitute.ca/team/kayla-zhu/">Brookfield Institute for Innovation and Entrepreneurship</a>.
-            <br>
-            <br>
-            📊 I'm passionate about distilling complex concepts into compelling stories with <b>data</b> and <b>design</b>.
-            <br>
-            <br>
-            💻  I'm available for freelance reporting and content writing assignments and can help you obtain, clean, analyze and visualize data.
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── DOT GRID BACKGROUND ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(54,32,56,0.13) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Inverted dot grid for dark sections */
+  #skills::before, #services-strip::before, footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(191,192,255,0.18) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #services-strip { position: relative; }
+  footer { position: relative; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 4rem;
+    background: rgba(247, 244, 241, 0.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--cream-dark);
+  }
+
+  .nav-tagline {
+    font-size: 0.78rem;
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink-muted);
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+    margin-left: 0.4rem;
+  }
+
+  .nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--violet);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    font-style: italic;
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0.25rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--ink-muted);
+    text-decoration: none;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--violet);
+    border-color: var(--periwinkle);
+    background: var(--periwinkle-pale);
+  }
+
+  .nav-links a.active {
+    color: var(--violet);
+    border-color: var(--periwinkle);
+    background: var(--periwinkle-pale);
+    font-weight: 500;
+  }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 7rem 4rem 4rem;
+    gap: 4rem;
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-text { animation: fadeUp 0.8s ease both; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    border: 1px solid var(--cream-dark);
+    background: var(--white);
+    padding: 0.3rem 0.85rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
+    flex-shrink: 0;
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.7); }
+  }
+
+  .hero-name {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(3.5rem, 7.5vw, 8.5rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.0;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
+  .hero-name .highlight {
+    color: var(--blue);
+    font-style: italic;
+    font-weight: 575;
+  }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin-bottom: 1.75rem;
+    line-height: 1.4;
+  }
+
+  .hero-desc {
+    font-size: 0.97rem;
+    color: var(--ink-light);
+    max-width: 460px;
+    margin-bottom: 2.25rem;
+    line-height: 1.78;
+  }
+
+  .hero-desc strong { color: var(--ink); font-weight: 400; }
+
+  .hero-ctas {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--violet);
+    color: white;
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 0.75rem 1.6rem;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 1.5px solid var(--violet);
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: #76AFFF;
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--ink);
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 0.75rem 1.6rem;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 1.5px solid var(--violet);
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--periwinkle);
+    background: var(--periwinkle-pale);
+  }
+
+  .hero-socials {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--ink-muted);
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .social-link:hover { color: var(--blue); }
+
+  /* ─── HERO DATA VIZ PANEL ─── */
+  .hero-scatter-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .hero-scatter-bg svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* hide on scroll past hero */
+  .hero-viz { display: none; }
+
+  .hero-text { position: relative; z-index: 2; animation: fadeUp 0.8s ease both; }
+
+  /* ─── SERVICES STRIP ─── */
+  #services-strip {
+    background: var(--cream);
+    padding: 1.5rem 4rem;
+    position: relative;
+    z-index: 1;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    display: block;
+    overflow: hidden;
+    border-top: 1.5px solid var(--violet);
+    border-bottom: 1.5px solid var(--violet);
+  }
+
+  .services-strip-inner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .strip-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+  }
+
+  .strip-items {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .strip-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+    padding: 0.5rem 1.1rem;
+    border-radius: 6px;
+    border: 1.5px solid;
+    transition: opacity 0.2s, transform 0.15s;
+    cursor: default;
+  }
+
+  .strip-item:hover { opacity: 0.85; transform: translateY(-1px); }
+
+  .strip-item-1 { background: rgba(191,192,255,0.15); border-color: var(--periwinkle); color: #4a4a9a; }
+  .strip-item-2 { background: rgba(118,175,255,0.15); border-color: var(--blue); color: #2a5fa0; }
+  .strip-item-3 { background: rgba(54,32,56,0.08); border-color: var(--violet); color: var(--violet); }
+  .strip-item-4 { background: rgba(155,143,247,0.15); border-color: #9b8ff7; color: #5a3fa8; }
+
+  .strip-item .strip-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .strip-item-1 .strip-dot { background: var(--periwinkle); }
+  .strip-item-2 .strip-dot { background: var(--blue); }
+  .strip-item-3 .strip-dot { background: var(--violet); }
+  .strip-item-4 .strip-dot { background: #9b8ff7; }
+
+  /* ─── SECTIONS ─── */
+  section { position: relative; z-index: 1; }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6rem 4rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .section-number {
+    font-size: 0.72rem;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--ink-muted);
+    opacity: 0.6;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+    font-weight: 600;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.25;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--cream-dark);
+    margin-left: 1rem;
+  }
+
+  /* ─── WORK / PROJECTS ─── */
+  #work { background: var(--cream); }
+
+  .projects-grid { display: grid; gap: 1px; border: 1.5px solid var(--violet); border-radius: 10px; overflow: hidden; background: var(--violet); }
+
+  .project-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 2rem;
+    padding: 2rem 2.5rem;
+    background: var(--cream);
+    border: none;
+    border-bottom: 1px solid var(--violet);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s, border-left 0.15s;
+    position: relative;
+    border-left: 3px solid transparent;
+  }
+
+  .project-card:last-child { border-bottom: none; }
+
+  .project-card:hover { background: var(--periwinkle-pale); border-left: 3px solid var(--periwinkle); padding-left: calc(2.5rem - 3px); }
+
+  .project-card.featured { background: var(--white); grid-template-columns: 1fr auto; }
+  .project-card.featured:hover { background: var(--periwinkle-pale); }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .tag {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.18rem 0.6rem;
+    border-radius: 3px;
+    border: 1px solid var(--cream-dark);
+    background: transparent;
+    color: var(--ink-muted);
+  }
+
+  .tag.teal { border-color: var(--blue); color: #3a6fba; background: var(--blue-pale); }
+  .tag.lavender { border-color: var(--periwinkle); color: #4a4aaa; background: var(--periwinkle-pale); }
+
+  .project-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.35;
+    margin-bottom: 0.65rem;
+  }
+
+  .project-client {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.6rem;
+    margin-top: -0.3rem;
+  }
+
+  .project-desc {
+    font-size: 0.88rem;
+    color: var(--ink-light);
+    line-height: 1.7;
+    max-width: 680px;
+  }
+
+  .project-arrow {
+    color: var(--ink-muted);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    transition: transform 0.2s, color 0.2s;
+  }
+
+  .project-card:hover .project-arrow { transform: translate(3px, -3px); color: var(--blue); }
+
+  /* Logo watermark bottom-right */
+  .client-logo-badge {
+    position: absolute;
+    bottom: 1.25rem;
+    right: 1.75rem;
+  }
+
+  .client-logo-img {
+    height: 18px;
+    width: auto;
+    max-width: 80px;
+    object-fit: contain;
+    opacity: 0.25;
+    filter: grayscale(100%);
+    transition: opacity 0.2s, filter 0.2s;
+  }
+
+  .project-card:hover .client-logo-img { opacity: 0.6; filter: grayscale(0%); }
+
+  /* ─── JOURNALISM ─── */
+  #journalism { background: var(--violet); position: relative; overflow: hidden; width: 100vw; margin-left: calc(-50vw + 50%); }
+  #journalism::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(191,192,255,0.15) 1px, transparent 1px); background-size: 28px 28px; pointer-events: none; z-index: 0; }
+  #journalism .section-title { color: white; }
+  #journalism .section-number { color: rgba(191,192,255,0.5); }
+  #journalism .section-line { background: rgba(255,255,255,0.15); }
+  #journalism .section-inner { position: relative; z-index: 1; }
+
+  .journalism-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    border: 1px solid rgba(191,192,255,0.35);
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(191,192,255,0.2);
+  }
+
+  .journalism-card {
+    padding: 2rem;
+    background: rgba(255,255,255,0.06);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    transition: background 0.2s, border-left 0.15s;
+    position: relative;
+    border-left: 3px solid transparent;
+  }
+
+  .journalism-card:hover { background: rgba(191,192,255,0.15); }
+
+  .journalism-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    font-style: italic;
+    color: white;
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .journalism-desc {
+    font-size: 0.86rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.65;
+  }
+
+  .read-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--periwinkle);
+    text-decoration: none;
+    margin-top: 0.25rem;
+    transition: gap 0.2s;
+  }
+
+  .journalism-card:hover .read-link { gap: 0.55rem; }
+
+  .journalism-logo {
+    height: 20px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.3;
+    filter: grayscale(100%) invert(1);
+    position: absolute;
+    bottom: 1.25rem;
+    right: 1.75rem;
+    transition: opacity 0.2s, filter 0.2s;
+  }
+
+  .journalism-card:hover .journalism-logo { opacity: 0.7; filter: grayscale(0%) invert(0); }
+
+  /* ─── ABOUT ─── */
+  #about { background: var(--cream); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    font-size: 0.97rem;
+    color: var(--ink-light);
+    line-height: 1.82;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-text p strong { color: #7c7fff; font-weight: 500; }
+
+  .about-text p em {
+    font-style: normal;
+    color: #7c7fff;
+    font-weight: 500;
+  }
+
+  .exp-section-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    color: var(--violet);
+    margin-bottom: 0.65rem;
+    padding-left: 0.1rem;
+  }
+
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid var(--violet);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .exp-item {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--violet);
+    background: var(--cream);
+    transition: background 0.2s;
+  }
+
+  .exp-item:last-child { border-bottom: none; }
+  .exp-item:not(.exp-current):hover { background: #f5f3f8; }
+
+  .exp-item.exp-current { background: var(--periwinkle-pale); border-left: 3px solid var(--periwinkle); }
+  .exp-item.exp-current:hover { background: var(--blue-pale); }
+
+
+  .exp-current-label {
+    font-size: 0.67rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--violet);
+    margin-bottom: 0.3rem;
+  }
+
+  .exp-label-prev {
+    font-size: 0.67rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.3rem;
+  }
+
+  .exp-role {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--violet);
+    margin-bottom: 0.15rem;
+    letter-spacing: -0.01em;
+  }
+
+
+
+  .exp-place {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--ink-muted);
+  }
+
+  .exp-logo {
+    height: 16px;
+    width: auto;
+    margin-top: 0.5rem;
+    opacity: 0.5;
+    filter: grayscale(40%);
+  }
+
+  /* ─── SKILLS ─── */
+  #skills { background: var(--violet); width: 100vw; margin-left: calc(-50vw + 50%); position: relative; overflow: hidden; }
+
+  #skills .section-title { color: white; font-family: 'Cormorant Garamond', serif; }
+  #skills .section-number { color: rgba(191,192,255,0.5); }
+  #skills .section-line { background: rgba(255,255,255,0.12); }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    gap: 0;
+  }
+
+  .skill-card {
+    padding: 1.4rem 2rem;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: transparent;
+    transition: background 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .skill-card:nth-child(even) { border-right: none; }
+  .skill-card:nth-child(3), .skill-card:nth-child(4) { border-bottom: none; }
+  .skill-card:hover { background: rgba(191,192,255,0.08); }
+
+  .skill-icon { flex-shrink: 0; display: flex; align-items: center; }
+
+  .skill-header {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .skill-name {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    font-style: italic;
+    color: white;
+    line-height: 1.2;
+  }
+
+  .skill-items {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+  }
+
+  /* ─── CONTACT ─── */
+  #contact {
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+  #contact::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(54,32,56,0.11) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .contact-inner { position: relative; z-index: 1; }
+
+  .contact-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 6rem 2rem;
+  }
+
+  .contact-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--cream-dark);
+    display: inline-block;
+    padding: 0.3rem 0.85rem;
+    border-radius: 4px;
+    background: var(--white);
+  }
+
+  .contact-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    font-weight: 500;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+  }
+
+  .contact-title em { font-style: italic; color: var(--blue); }
+
+  .contact-desc {
+    font-size: 0.97rem;
+    color: var(--ink-muted);
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--violet);
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 1rem 2.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 1.5px solid var(--violet);
+    transition: background 0.2s, transform 0.2s;
+    margin-bottom: 2rem;
+  }
+
+  .contact-email:hover { background: #76AFFF; transform: translateY(-2px); }
+
+  .contact-socials { display: flex; justify-content: center; gap: 1.5rem; }
+
+  .contact-socials a {
+    font-size: 0.94rem;
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-socials a:hover { color: var(--blue); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--violet);
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    overflow: visible;
+    flex-shrink: 0;
+  }
+
+  footer p { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 2rem; }
+    #hero { grid-template-columns: 1fr; padding: 6rem 2rem 3rem; }
+    .hero-viz { display: none; }
+    .section-inner { padding: 4rem 2rem; }
+    #services-strip { padding: 1rem 2rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .journalism-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem 2rem; }
+  }
+
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .project-card { grid-template-columns: 1fr; }
+    .project-arrow { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── FULL VIEWPORT SCATTER ─── -->
+<div class="hero-scatter-bg" id="heroScatterBg">
+  <svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="pointer-events:none;">
+    <!-- Ghost blobs -->
+    <circle cx="160" cy="780" r="180" fill="#76AFFF" fill-opacity="0.05" stroke="#76AFFF" stroke-width="0.5" stroke-opacity="0.08"/>
+    <circle cx="1200" cy="130" r="160" fill="#BFC0FF" fill-opacity="0.05" stroke="#BFC0FF" stroke-width="0.5" stroke-opacity="0.08"/>
+    <!-- Zone 1: bottom-left -->
+    <circle cx="80"  cy="800" r="90"  fill="#76AFFF"  fill-opacity="0.10" stroke="#76AFFF"  stroke-width="0.7" stroke-opacity="0.16"/>
+    <circle cx="200" cy="750" r="40"  fill="#BFC0FF"  fill-opacity="0.16" stroke="#BFC0FF"  stroke-width="0.5" stroke-opacity="0.25"/>
+    <circle cx="320" cy="820" r="20"  fill="#362038"  fill-opacity="0.14" stroke="#362038"  stroke-width="0.5" stroke-opacity="0.22"/>
+    <circle cx="110" cy="600" r="70"  fill="#BFC0FF"  fill-opacity="0.11" stroke="#BFC0FF"  stroke-width="0.6" stroke-opacity="0.18"/>
+    <circle cx="250" cy="680" r="14"  fill="#76AFFF"  fill-opacity="0.21" stroke="#76AFFF"  stroke-width="0.4" stroke-opacity="0.32"/>
+    <circle cx="50"  cy="500" r="8"   fill="#362038"  fill-opacity="0.20" stroke="#362038"  stroke-width="0.4" stroke-opacity="0.30"/>
+    <!-- Zone 2: lower-mid (off-diagonal outliers) -->
+    <circle cx="380" cy="700" r="100" fill="#362038"  fill-opacity="0.08" stroke="#362038"  stroke-width="0.7" stroke-opacity="0.13"/>
+    <circle cx="480" cy="760" r="28"  fill="#76AFFF"  fill-opacity="0.18" stroke="#76AFFF"  stroke-width="0.5" stroke-opacity="0.27"/>
+    <circle cx="550" cy="640" r="16"  fill="#BFC0FF"  fill-opacity="0.20" stroke="#BFC0FF"  stroke-width="0.4" stroke-opacity="0.30"/>
+    <circle cx="300" cy="560" r="24"  fill="#76AFFF"  fill-opacity="0.17" stroke="#76AFFF"  stroke-width="0.5" stroke-opacity="0.27"/>
+    <circle cx="170" cy="440" r="11"  fill="#BFC0FF"  fill-opacity="0.22" stroke="#BFC0FF"  stroke-width="0.4" stroke-opacity="0.32"/>
+    <!-- Zone 3: mid -->
+    <circle cx="620" cy="520" r="85"  fill="#76AFFF"  fill-opacity="0.10" stroke="#76AFFF"  stroke-width="0.6" stroke-opacity="0.16"/>
+    <circle cx="700" cy="440" r="46"  fill="#BFC0FF"  fill-opacity="0.15" stroke="#BFC0FF"  stroke-width="0.5" stroke-opacity="0.23"/>
+    <circle cx="750" cy="580" r="22"  fill="#362038"  fill-opacity="0.14" stroke="#362038"  stroke-width="0.5" stroke-opacity="0.21"/>
+    <circle cx="540" cy="380" r="18"  fill="#76AFFF"  fill-opacity="0.19" stroke="#76AFFF"  stroke-width="0.4" stroke-opacity="0.29"/>
+    <circle cx="820" cy="500" r="12"  fill="#BFC0FF"  fill-opacity="0.22" stroke="#BFC0FF"  stroke-width="0.4" stroke-opacity="0.33"/>
+    <circle cx="650" cy="320" r="8"   fill="#362038"  fill-opacity="0.20" stroke="#362038"  stroke-width="0.4" stroke-opacity="0.30"/>
+    <!-- Zone 4: upper-mid — off-diagonal -->
+    <circle cx="880" cy="340" r="95"  fill="#BFC0FF"  fill-opacity="0.10" stroke="#BFC0FF"  stroke-width="0.6" stroke-opacity="0.16"/>
+    <circle cx="960" cy="430" r="38"  fill="#362038"  fill-opacity="0.14" stroke="#362038"  stroke-width="0.5" stroke-opacity="0.21"/>
+    <circle cx="1000" cy="260" r="20" fill="#76AFFF"  fill-opacity="0.19" stroke="#76AFFF"  stroke-width="0.4" stroke-opacity="0.29"/>
+    <circle cx="840"  cy="200" r="14" fill="#BFC0FF"  fill-opacity="0.21" stroke="#BFC0FF"  stroke-width="0.4" stroke-opacity="0.31"/>
+    <circle cx="1060" cy="370" r="9"  fill="#362038"  fill-opacity="0.21" stroke="#362038"  stroke-width="0.4" stroke-opacity="0.31"/>
+    <!-- Zone 5: top-right -->
+    <circle cx="1100" cy="180" r="80" fill="#362038"  fill-opacity="0.10" stroke="#362038"  stroke-width="0.6" stroke-opacity="0.16"/>
+    <circle cx="1200" cy="250" r="44" fill="#76AFFF"  fill-opacity="0.15" stroke="#76AFFF"  stroke-width="0.5" stroke-opacity="0.23"/>
+    <circle cx="1260" cy="130" r="24" fill="#BFC0FF"  fill-opacity="0.18" stroke="#BFC0FF"  stroke-width="0.4" stroke-opacity="0.27"/>
+    <circle cx="1320" cy="300" r="14" fill="#76AFFF"  fill-opacity="0.20" stroke="#76AFFF"  stroke-width="0.4" stroke-opacity="0.30"/>
+    <circle cx="1150" cy="80"  r="10" fill="#362038"  fill-opacity="0.22" stroke="#362038"  stroke-width="0.4" stroke-opacity="0.32"/>
+    <circle cx="1350" cy="180" r="7"  fill="#BFC0FF"  fill-opacity="0.25" stroke="#BFC0FF"  stroke-width="0.4" stroke-opacity="0.36"/>
+    <!-- Off-diagonal outliers for realism -->
+    <circle cx="200" cy="130" r="55" fill="#BFC0FF"  fill-opacity="0.11" stroke="#BFC0FF"  stroke-width="0.6" stroke-opacity="0.18"/>
+    <circle cx="1050" cy="650" r="35" fill="#76AFFF"  fill-opacity="0.13" stroke="#76AFFF"  stroke-width="0.5" stroke-opacity="0.20"/>
+    <circle cx="90"   cy="300" r="18" fill="#362038"  fill-opacity="0.16" stroke="#362038"  stroke-width="0.4" stroke-opacity="0.25"/>
+    <circle cx="1300" cy="500" r="12" fill="#BFC0FF"  fill-opacity="0.20" stroke="#BFC0FF"  stroke-width="0.4" stroke-opacity="0.30"/>
+    <circle cx="430" cy="200" r="30" fill="#76AFFF"  fill-opacity="0.14" stroke="#76AFFF"  stroke-width="0.5" stroke-opacity="0.22"/>
+    <circle cx="900" cy="740" r="28" fill="#362038"  fill-opacity="0.11" stroke="#362038"  stroke-width="0.5" stroke-opacity="0.17"/>
+    <circle cx="700" cy="100" r="20" fill="#BFC0FF"  fill-opacity="0.16" stroke="#BFC0FF"  stroke-width="0.4" stroke-opacity="0.25"/>
+  </svg>
+</div>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="#hero" class="nav-name">Kayla Zhu <span class="nav-tagline">Freelance Data Storyteller</span></a>
+  <ul class="nav-links">
+    <li><a href="#work" data-section="work">Client Work</a></li>
+    <li><a href="#journalism" data-section="journalism">Journalism</a></li>
+    <li><a href="#about" data-section="about">About</a></li>
+    <li><a href="#contact" data-section="contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Available for freelance assignments</div>
+    <h1 class="hero-name">Hi, I'm <span class="highlight">Kayla.</span></h1>
+    <p class="hero-tagline">Data storyteller &amp; writer for hire</p>
+    <p class="hero-desc">
+      I help organizations turn <strong style="color:#76AFFF;font-weight:600;">complex data</strong> into clear, compelling stories.
+      From deep-dive industry reports to data-driven articles, I can handle the analysis,
+      visualization, and writing so your most important insights actually land.
+    </p>
+    <div class="hero-ctas">
+      <a href="#work" class="btn-primary">See my work ↓</a>
+      <a href="#contact" class="btn-secondary">Get in touch</a>
+    </div>
+    <div class="hero-socials">
+      <a href="mailto:kayla.yr.zhu@gmail.com" class="social-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Shoot me an email
+      </a>
+      <span style="color:var(--cream-dark)">·</span>
+      <a href="https://www.linkedin.com/in/kayla-zhu-730194149/" target="_blank" class="social-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        Connect with me on LinkedIn
+      </a>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<!-- ─── SERVICES STRIP ─── -->
+<div id="services-strip">
+  <div class="services-strip-inner">
+    <span class="strip-label">What I do</span>
+    <div class="strip-items">
+      <span class="strip-item strip-item-1"><span class="strip-dot"></span>Data Analysis</span>
+      <span class="strip-item strip-item-2"><span class="strip-dot"></span>Data Visualization</span>
+      <span class="strip-item strip-item-3"><span class="strip-dot"></span>Editorial &amp; Content Writing</span>
+      <span class="strip-item strip-item-4"><span class="strip-dot"></span>Design</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─── WORK / CLIENT PROJECTS ─── -->
+<section id="work">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <h2 class="section-title">Client work</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Spergel Report -->
+      <a href="https://www.spergel.ca/wp-content/uploads/2025/07/Debt-Load-and-the-Impact-to-Psychological-Wellbeing_September-2024.pdf" target="_blank" class="project-card featured">
+        <div>
+          <div class="project-tags">
+            <span class="tag teal">Data Analysis</span>
+            <span class="tag teal">Data Visualization</span>
+            <span class="tag lavender">Report Writing</span>
+            <span class="tag lavender">Report Design</span>
+          </div>
+          <div class="project-title">Debt Load and the Impact to Psychological Wellbeing</div>
+          <div class="project-client">msi Spergel</div>
+          <p class="project-desc">End-to-end research report: conducted the data analysis, wrote the full report, and designed the final publication including all data visualizations. Explored how personal debt loads correlate with mental health outcomes across Canadian households.</p>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <!-- CVCA Outlook -->
+      <a href="https://central.cvca.ca/data-analysis/resilience-and-realignment-the-2026-canadian-private-capital-outlook/" target="_blank" class="project-card">
+        <div>
+          <div class="project-tags">
+            <span class="tag teal">Data Analysis</span>
+            <span class="tag teal">Data Visualization</span>
+            <span class="tag lavender">Writing</span>
+          </div>
+          <div class="project-title">Resilience and Realignment: The 2026 Canadian Private Capital Outlook</div>
+          <div class="project-client">Canadian Venture Capital Association</div>
+          <p class="project-desc">Data-driven analysis and editorial on the state of venture capital and private equity in Canada heading into 2026, with original charts and expert framing.</p>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <!-- CVCA AI -->
+      <a href="https://central.cvca.ca/data-analysis/mapping-the-growth-of-ai-in-canada-through-investment/" target="_blank" class="project-card">
+        <div>
+          <div class="project-tags">
+            <span class="tag teal">Data Analysis</span>
+            <span class="tag teal">Data Visualization</span>
+            <span class="tag lavender">Writing</span>
+            <span class="tag lavender">Interviews</span>
+          </div>
+          <div class="project-title">Mapping the Growth of AI in Canada Through Investment</div>
+          <div class="project-client">Canadian Venture Capital Association</div>
+          <p class="project-desc">Analyzed investment flows into Canada's AI sector, visualized trends, and interviewed industry leaders to contextualize what the data reveals about AI's trajectory.</p>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <!-- CVCA Venture Debt -->
+      <a href="https://central.cvca.ca/data-analysis/a-deep-dive-into-canadas-burgeoning-venture-debt-market/" target="_blank" class="project-card">
+        <div>
+          <div class="project-tags">
+            <span class="tag teal">Data Analysis</span>
+            <span class="tag teal">Data Visualization</span>
+            <span class="tag lavender">Writing</span>
+            <span class="tag lavender">Interviews</span>
+          </div>
+          <div class="project-title">A Deep Dive into Canada's Burgeoning Venture Debt Market</div>
+          <div class="project-client">Canadian Venture Capital Association</div>
+          <p class="project-desc">Compared rising Canadian venture debt trends with international benchmarks using Pitchbook and proprietary CVCA data. Featured interactive Flourish visualizations and perspectives from VC leaders.</p>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── JOURNALISM ─── -->
+<section id="journalism">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2 class="section-title">Past investigative data journalism work</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="journalism-grid">
+
+      <a href="https://theijf.org/article/half-of-airbnbs-in-major-canadian-cities-appear-to-be-operating-without-a-licence" target="_blank" class="journalism-card">
+        <div class="journalism-title">Half of Airbnbs in Major Canadian Cities Appear to Be Operating Without a Licence</div>
+        <p class="journalism-desc">Built a custom dataset combining Airbnb listings and STR licence records across nine Canadian cities. Used Python, spreadsheets, and QGIS for data cleaning and geographic analysis. Filed ATIP requests and worked with InsideAirbnb for Canada-wide listings data.</p>
+        <span class="read-link">Read the story →</span>
+      </a>
+
+      <a href="https://theijf.org/article/doug-fords-donors-keep-benefitting-from-his-private-healthcare-push" target="_blank" class="journalism-card">
+        <div class="journalism-title">Doug Ford's Donors Keep Benefitting from His Private Healthcare Push</div>
+        <p class="journalism-desc">Data-driven investigation connecting political donation records with procurement patterns in Ontario's expanding private healthcare sector under the Ford government.</p>
+        <span class="read-link">Read the story →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+<div class="section-inner" style="position:relative; z-index:1;">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <h2 class="section-title">About me</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Hi there! I'm <strong style="color:#7c7fff;font-weight:600;">Kayla</strong>, a data journalist and content writer based in Canada. My bread and butter is turning complex data into clear, compelling stories that actually get read.
         </p>
         <p>
-            <br>    </p>
-
-        <p>Want to chat? You can reach me here:
+          My work spans <em>data scraping and collection</em>, <em>data analysis</em>, <em> data visualization</em>, and <em>edtorial writing</em>, whether that's a full research report, a data-driven editorial piece, or a survey findings blog post, I bring the same care to the numbers as I do to the words.
         </p>
-            <br>
-            <div class="social-icons">
-                <a href="mailto:kayla.yr.zhu@gmail.com" target="_blank" class="icon-link"><img src="email.svg" alt="Email"></a>
-                <a href="https://www.linkedin.com/in/kayla-zhu-730194149/" target="_blank" class="icon-link"><img src="linkedin.svg" alt="LinkedIn"></a>
-                <a href="https://twitter.com/kylzhu" target="_blank" class="icon-link"><img src="twitter.svg" alt="Twitter"></a>
-            </div>
-           <p>
-            <br>
+        <p>
+          Currently, I work full-time at <strong style="color:#7c7fff;font-weight:600;">Visualping</strong> where I handle PR and marketing across a mix of everything: content marketing, pitching to journalists, social media marketing, building media relationships, and everything in between. 
         </p>
-            <p>Check out some of my work here, or get to know me a bit more:</p>
+          <p></p>Outside of that, I take on <strong style="color:#7c7fff;font-weight:600;">freelance data storytelling</strong> projects for clients who need someone who can do it all.
+        </p>
+        <p>
+          If you have data that deserves a better story, I'd love to hear about it.
+        </p>
 
-            <div class="buttons">
-                <a href="writing.html" class="button">Writing</a>
-                <a href="graphic-design.html" class="button">Graphic Design</a>
-                <a href="about.html" class="button">About Kayla</a>
+      </div>
 
-            </div>
-            <p>
-                <br>
-            </p>
-        <p>And here are some of my projects:</p>
-        <p><br></p>
-
-        <h2>🏡 Geographic data-driven feature on short-term rental licencing in Canada</h2>
-        <div class="container-for-projects">
-            <div class="column">
-                <h3><a href="https://theijf.org/half-of-airbnbs-in-major-canadian-cities-appear-to-be-operating-without-a-licence" target="_blank" class="project-links">Half of Airbnbs in major Canadian cities appear to be operating without a licence
-                </a></h3>
-                <img src="image09.jpg" alt="Airbnb chart" class="project-example">
-            </div>
-            <div class="column">
-                <p class="item">
-                For this story, I calculated the approximate licencing rate of Airbnbs across nine major Canadian cities by 
-                creating a custom dataset that includes the number of Airbnb listings and the number of active short-term rental 
-                licences in each city. 
-                <br><br>
-                I wrote about the various short-term rental regulations in each city, the impact of the proliferation of the 
-                short-term rental industry on the long-term rental market, what's working and what's not working in regards 
-                to regulation, and spoke to experts about how platforms and governments can work together together to ensure 
-                higher licencing rates.
-                <br><br>
-                I liaised with city and provincial staff to acquire up-to-date short-term rental licencing data for each city – including sending
-                ATIP requests – and worked with non-profit advocacy group InsideAirbnb to acquire Canada-wide listings data for Airbnb.
-                I used Python to clean the listings and licencing data, and then used spreadsheets and QGIS to analyze the data.            
-            </p>
+      <div>
+        <p class="exp-section-label">Experience</p>
+        <div class="experience-list">
+          <div class="exp-item exp-current">
+            <div class="exp-current-label">Current</div>
+            <div class="exp-role">Freelance Data Storyteller</div>
+            <div class="exp-place">CVCA · Originality.AI · msi Spergel</div>
+          </div>
+          <div class="exp-item exp-current">
+            <div class="exp-role">PR &amp; Marketing Specialist</div>
+            <div class="exp-place">Visualping</div>
+            <img src="logo-visualping.png" alt="Visualping" class="exp-logo" onerror="this.style.display='none'">
+          </div>
+          <div class="exp-item">
+            <div class="exp-label-prev">Previously</div>
+            <div class="exp-role">Data-Driven Writer</div>
+            <div class="exp-place">Visual Capitalist</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-role">Data Reporter</div>
+            <div class="exp-place">Investigative Journalism Foundation</div>
+          </div>
         </div>
-            </div>
-        <p><br><br><p></p>
-        <h2>📈 Financial data-driven report on the rising popularity of venture debt in Canada</h2>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div class="container-for-projects">
-                <div class="column">
-                    <h3><a href="https://central.cvca.ca/a-deep-dive-into-canadas-burgeoning-venture-debt-market" target="_blank" class="project-links">A Deep Dive into Canada's Burgeoning Venture Debt Market
-                    </a></h3>
-                    <div class="flourish-embed flourish-chart" data-src="visualisation/15155554"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-                </div>
-                <div class="column">
-                    <p class="item">
-                        For the CVCA, I analyzed Canadian and international venture debt deals data using Google Sheets.
-                         Charts were created using Flourish. Venture debt data came from CVCA's proprietary deals database 
-                         as well as Pitchbook data.
-                         <br><br>
-                        In this story, I compared the rising trend of venture debt deals in Canada with international trends, spoke to venture capital leaders to identify the motivations behind the rising trends,
-                        summarized key insights from the analysis and visualized the venture debt deals data
-                          with interactive data visualizations.            
-                </p>
-            </div>
-                </div>
-    </body>
-</html>
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <h2 class="section-title">What I bring to your project</h2>
+      <div class="section-line"></div>
+    </div>
+ 
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-header"><div class="skill-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="#BFC0FF"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg></div><div class="skill-name">Data Analysis</div></div>
+        <div class="skill-items">Python · SQL · Google Sheets · Excel · QGIS</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-header"><div class="skill-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="#76AFFF"><circle cx="5" cy="18" r="2.2"/><circle cx="9" cy="12" r="2.2"/><circle cx="14" cy="8" r="2.2"/><circle cx="19" cy="4" r="2.2"/><circle cx="7" cy="6" r="2.2"/><circle cx="17" cy="15" r="2.2"/></svg></div><div class="skill-name">Data Visualization</div></div>
+        <div class="skill-items">Flourish · Datawrapper · Adobe Illustrator· Tableau</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-header"><div class="skill-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="#BFC0FF"><path d="M17.5 2.5a2.828 2.828 0 0 1 4 4L8 20l-5 1 1-5L17.5 2.5z"/><path d="M12 21h9" fill="none" stroke="#BFC0FF" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="skill-name">Editorial &amp; Content Writing</div></div>
+        <div class="skill-items">Research reports · Data-driven editorial · Survey findings articles </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-header"><div class="skill-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="#9b8ff7"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div><div class="skill-name">Design</div></div>
+        <div class="skill-items">End-to-end report branding and design · Layout design · Adobe Creative Suite · Canva</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+  <svg class="contact-scatter" viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;">
+    <circle cx="820" cy="60"  r="120" fill="#BFC0FF" fill-opacity="0.05" stroke="#BFC0FF" stroke-width="0.5" stroke-opacity="0.09"/>
+    <circle cx="80"  cy="340" r="100" fill="#76AFFF" fill-opacity="0.05" stroke="#76AFFF" stroke-width="0.5" stroke-opacity="0.09"/>
+    <circle cx="750" cy="150" r="58"  fill="#BFC0FF" fill-opacity="0.12" stroke="#BFC0FF" stroke-width="0.7" stroke-opacity="0.2"/>
+    <circle cx="140" cy="210" r="65"  fill="#76AFFF" fill-opacity="0.10" stroke="#76AFFF" stroke-width="0.7" stroke-opacity="0.16"/>
+    <circle cx="500" cy="330" r="50"  fill="#362038" fill-opacity="0.08" stroke="#362038" stroke-width="0.6" stroke-opacity="0.13"/>
+    <circle cx="860" cy="290" r="42"  fill="#76AFFF" fill-opacity="0.11" stroke="#76AFFF" stroke-width="0.6" stroke-opacity="0.17"/>
+    <circle cx="35"  cy="115" r="46"  fill="#BFC0FF" fill-opacity="0.10" stroke="#BFC0FF" stroke-width="0.6" stroke-opacity="0.15"/>
+    <circle cx="620" cy="85"  r="27"  fill="#76AFFF" fill-opacity="0.17" stroke="#76AFFF" stroke-width="0.5" stroke-opacity="0.27"/>
+    <circle cx="280" cy="315" r="30"  fill="#BFC0FF" fill-opacity="0.16" stroke="#BFC0FF" stroke-width="0.5" stroke-opacity="0.25"/>
+    <circle cx="700" cy="355" r="22"  fill="#362038" fill-opacity="0.13" stroke="#362038" stroke-width="0.5" stroke-opacity="0.2"/>
+    <circle cx="400" cy="55"  r="19"  fill="#BFC0FF" fill-opacity="0.19" stroke="#BFC0FF" stroke-width="0.5" stroke-opacity="0.29"/>
+    <circle cx="195" cy="78"  r="24"  fill="#362038" fill-opacity="0.12" stroke="#362038" stroke-width="0.5" stroke-opacity="0.19"/>
+    <circle cx="550" cy="195" r="10"  fill="#76AFFF" fill-opacity="0.24" stroke="#76AFFF" stroke-width="0.4" stroke-opacity="0.35"/>
+    <circle cx="355" cy="168" r="8"   fill="#BFC0FF" fill-opacity="0.26" stroke="#BFC0FF" stroke-width="0.4" stroke-opacity="0.37"/>
+    <circle cx="60"  cy="275" r="9"   fill="#76AFFF" fill-opacity="0.24" stroke="#76AFFF" stroke-width="0.4" stroke-opacity="0.35"/>
+    <circle cx="670" cy="255" r="6"   fill="#BFC0FF" fill-opacity="0.27" stroke="#BFC0FF" stroke-width="0.4" stroke-opacity="0.4"/>
+  </svg>
+  <div class="contact-inner">
+    <h2 class="contact-title">Got data that deserves a<br><em>better story?</em></h2>
+    <p class="contact-desc">
+      I'm available for freelance data storytelling projects: analysis, visualization, writing, and report design.
+      Drop me a line and let's talk about what you're working on.
+    </p>
+       <a href="mailto:kayla.yr.zhu@gmail.com" class="contact-email">Let's chat</a>
+    <div class="contact-socials">
+      <a href="https://www.linkedin.com/in/kayla-zhu-730194149/" target="_blank">Connect with me on LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Kayla Zhu</p>
+  <p>Data journalist · Writer · Freelancer</p>
+</footer>
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Parallax scatter on scroll
+  const scatterSvg = document.getElementById('heroScatterBg');
+  let ticking = false;
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        if (scatterSvg) {
+          scatterSvg.style.transform = 'translateY(' + (scrollY * 0.3) + 'px)';
+          scatterSvg.style.opacity = Math.max(0, 1 - scrollY / 600);
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Active nav indicator
+  const sections = ['work','journalism','about','contact'];
+  const navLinks = {};
+  sections.forEach(id => {
+    const el = document.querySelector('[data-section="' + id + '"]');
+    if (el) navL
